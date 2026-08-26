@@ -4,6 +4,8 @@ import argparse
 import json
 import os
 import random
+import sys
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -12,8 +14,10 @@ from torch.optim import AdamW
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 
 from torch.utils.data import DataLoader
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "models"))
 from model_transformer import TransformerDetectorPerFrame
-from dataset_perframe import get_dataloaders, get_dataloaders_h5, collate_fn
+from dataset import get_dataloaders, get_dataloaders_h5, collate_fn
 
 
 # ── Args ─────────────────────────────────────────────────────────────────────

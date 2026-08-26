@@ -15,6 +15,8 @@ Usage:
 import argparse
 import json
 import os
+import sys
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -29,6 +31,8 @@ from sklearn.metrics import (
     auc,
 )
 from torch.utils.data import DataLoader
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "models"))
 
 
 # ── Args ─────────────────────────────────────────────────────────────────────

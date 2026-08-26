@@ -4,6 +4,8 @@ import argparse
 import json
 import os
 import random
+import sys
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -11,6 +13,7 @@ import torch.nn as nn
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "models"))
 from model_tcn import TCNDetectorPerFrame
 from dataset import get_dataloaders, get_dataloaders_h5
 
