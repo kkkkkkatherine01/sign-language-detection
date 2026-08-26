@@ -1,0 +1,11 @@
+# Core
+numpy>=2.1
+torch>=2.7        # install the CUDA build matching your GPU/driver if training on GPU:
+                  # see https://pytorch.org/get-started/locally/
+
+# Preprocessing / data packing
+h5py>=3.13
+
+# Evaluation
+matplotlib>=3.9
+scikit-learn>=1.5
