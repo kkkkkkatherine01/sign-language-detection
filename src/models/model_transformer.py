@@ -25,8 +25,6 @@ class PositionalEncoding(nn.Module):
         self.register_buffer("pe", pe.unsqueeze(0))   # (1, max_len, d_model)
 
     def forward(self, x: torch.Tensor, offset: int = 0) -> torch.Tensor:
-        # x: (batch, T, d_model)
-        # offset: global start position of this chunk
         return x + self.pe[:, offset : offset + x.size(1)]
 
 
@@ -47,7 +45,7 @@ class TransformerDetectorPerFrame(nn.Module):
         dim_feedforward:    int   = 256,
         dropout:            float = 0.1,
         input_dropout:      float = 0.5,
-        window_size:        int   = 100,
+        window_size:        int   = 250,
     ):
         super().__init__()
 
