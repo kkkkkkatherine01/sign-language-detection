@@ -83,3 +83,8 @@ src/
   evaluation/      evaluate.py
   utils/           pack_to_h5.py, bootstrap_eval.py
 ```
+
+## License
+
+[MIT](LICENSE) — the code only. The datasets referenced above each have
+their own license/usage terms and are not included in this repo.
